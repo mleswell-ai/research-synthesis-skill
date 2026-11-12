@@ -1,0 +1,27 @@
+{
+  "note": "For testing whether the skill's description triggers when it should and stays quiet when it should not.",
+  "should_trigger": [
+    "Can you pull together what these eight papers say about spaced practice and tell me how solid it is?",
+    "I need a literature review on remote work and productivity for a board paper.",
+    "What does the research actually say about four-day weeks? Not just the headlines.",
+    "Here are twelve interview transcripts from our user research. Synthesise the findings.",
+    "Do a rapid evidence review on whether mentoring reduces early-career teacher attrition.",
+    "These three reports contradict each other on heat pump running costs. Help me reconcile them.",
+    "Can you check whether this evidence summary a colleague wrote holds up?",
+    "Scoping review: what has been studied about AI tutoring in secondary maths?",
+    "Summarise the state of the evidence on phonics screening and give me confidence levels.",
+    "I've got survey free-text responses from 400 staff. What are the themes?"
+  ],
+  "should_not_trigger": [
+    "Summarise this PDF for me.",
+    "What year was the Education Endowment Foundation founded?",
+    "Proofread my literature review for typos.",
+    "Explain what a confidence interval is.",
+    "Write a blog post about why feedback matters.",
+    "Find me the DOI for this paper.",
+    "Format these references in APA style.",
+    "Run a t-test on this spreadsheet.",
+    "What's the best laptop under 1,000 pounds?",
+    "Draft interview questions for my user research study."
+  ]
+}

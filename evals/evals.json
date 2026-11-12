@@ -1,0 +1,97 @@
+{
+  "skill_name": "research-synthesis",
+  "note": "All evaluation files are fictitious. Each scenario plants specific traps; expected_behavior lists what a good response does about them. There is no built-in runner: load the skill, give the query and files to a fresh session, and judge the output against expected_behavior. Run the same query without the skill for a baseline.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "supplied-corpus-with-traps",
+      "query": "We're deciding whether to roll out flexible start times across all 30 of our depots to cut staff turnover. I've attached everything we've got. What does the evidence say?",
+      "files": [
+        "files/flexible-start/01-northfield-pilot-report.md",
+        "files/flexible-start/02-trade-press-article.md",
+        "files/flexible-start/03-sector-survey-abstract.md",
+        "files/flexible-start/04-vendor-case-study.md",
+        "files/flexible-start/05-independent-evaluation.md"
+      ],
+      "expected_behavior": [
+        "Opens with a bottom line that answers the roll-out question and conveys limited certainty, before any source-by-source detail",
+        "Treats the trade press article as coverage of the Northfield pilot, not as a second independent piece of evidence, and does not repeat its 'slash by a quarter' or 'proves' framing as a finding",
+        "Reports the pilot result with its precision (4.0 percentage points, interval reaching zero) and a locator such as Table 2, and notes at least one of its limitations (canteens, unblinded managers, clustering not adjusted)",
+        "States that the survey was available only as an abstract, that it measured intention to leave and not actual leaving, and that it shows association, not cause",
+        "Flags the vendor case study as an interested source with confounding changes (pay rise, night shift closure) and gives it little or no weight",
+        "Reports the independent evaluation's finding of no difference after month 6 as evidence against a lasting effect, and offers the time horizon as a likely reason the sources differ",
+        "Does not vote-count ('four of five sources support')",
+        "Treats the tenure subgroup result as exploratory because it was not planned",
+        "Gives each finding an explicit certainty rating with a reason; no claim about a lasting reduction in turnover is rated above low",
+        "Separates findings from recommendations and offers an option short of full roll-out (for example a staged or measured trial), or says what evidence would settle the decision",
+        "States that the synthesis covers only the supplied documents",
+        "Every figure cited can be found at the stated place in the supplied files"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "interview-synthesis",
+      "query": "Here are notes from six interviews about our onboarding. Can you synthesise them? We need to decide what to fix first.",
+      "files": [
+        "files/onboarding-interviews/P01.md",
+        "files/onboarding-interviews/P02.md",
+        "files/onboarding-interviews/P03.md",
+        "files/onboarding-interviews/P04.md",
+        "files/onboarding-interviews/P05.md",
+        "files/onboarding-interviews/P06.md"
+      ],
+      "expected_behavior": [
+        "States themes as claims that could be wrong, not as topic labels such as 'Communication' or 'Systems'",
+        "Identifies that new starters did not know whom to ask, with a count and denominator, and notes the contrasting case of the participant with an assigned buddy",
+        "Identifies the gap between saying the handbook is useful and not having used it, and treats it as a say-do gap instead of concluding that the handbook works",
+        "Identifies late system logins as a pattern among customer advisers and notes that it does not apply to the warehouse role",
+        "Treats the car park complaint as a single participant's view outside the question, not as an onboarding theme, however forcefully it was expressed",
+        "Notes the hidden cost to experienced staff (daily questions) as resting on one participant",
+        "Gives counts as 'n of 6' and does not convert them to percentages",
+        "Distinguishes the views of recent starters from those of long-serving staff who did not experience current onboarding",
+        "Says plainly that six interviews across two sites and three roles is thin, and names what the data cannot support",
+        "Ends with prioritised implications tied to the decision ('what to fix first'), marked as recommendations, each resting on named findings",
+        "Uses participant IDs and does not add identifying detail beyond what was supplied"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "audit-existing-review",
+      "query": "A colleague drafted this literature review and wants to send it to the board. Can you check whether it's sound?",
+      "files": ["files/audit/draft-synthesis.md"],
+      "expected_behavior": [
+        "Gives an overall verdict first: the conclusions are not supported as written",
+        "Identifies the source-by-source summary structure as a lack of synthesis",
+        "Identifies vote counting on significance ('five out of seven') and explains why it is unreliable",
+        "Identifies double counting: the press article about Costa (2021) is counted as a separate source",
+        "Identifies unsupported phrases with no citation ('Research shows', 'Experts agree', 'It is well established')",
+        "Identifies that Hallam (2020) is cited in the text but missing from the reference list, and that the patient outcomes claim is outside the review's question",
+        "Identifies causal and absolute language ('proving', 'causes', 'proven') that the described evidence cannot carry, and that a 62% figure rests on a single source with no design or sample given",
+        "Identifies that it is labelled a systematic review with no question, criteria, search or appraisal reported",
+        "Notes the absence of any limitations or of engagement with the two null results",
+        "Does not invent details of the cited studies or assert what they 'really' found; says the sources would need to be checked",
+        "Provides specific, prioritised fixes, not just a list of faults"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "open-question-needs-search",
+      "query": "What does the research say about retrieval practice for primary-age pupils? I'm writing a short briefing for our teaching and learning group.",
+      "files": [],
+      "expected_behavior": [
+        "Either asks no more than three questions that would change the work (for example the decision the briefing serves, subject or age scope), or proceeds and lists its assumptions at the top",
+        "Chooses a proportionate mode and names the review type honestly; does not call the result a systematic review",
+        "Establishes the current date before searching and logs the searches run",
+        "Prefers primary studies and systematic reviews to blogs and summaries, and follows secondary reports back to the original",
+        "Distinguishes evidence from primary-age pupils from evidence in older students or laboratory settings, treating the latter as indirect",
+        "Records sources read only as abstracts as such, and does not rest confident claims on them",
+        "Searches for and reports null or contrary findings and boundary conditions",
+        "Cites every claim to a source that was opened in the session, with no references supplied from memory",
+        "Does not rank or compare effect sizes across dissimilar studies as if they were on one scale",
+        "Gives each finding a certainty rating with a reason, and uses wording that matches the rating",
+        "Leads with a bottom line and includes implications for classroom practice marked as interpretation or recommendation",
+        "Includes a short account of method and limitations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "_note": "Test fixture. Every source here is fictitious and exists only to exercise the validators.",
+  "question": "Does the Fixture Reading Programme improve reading comprehension for pupils aged 7 to 11?",
+  "purpose": "Decide whether to pilot the programme in six schools next year.",
+  "as_of": "2025-01-15",
+  "mode": "standard",
+  "protocol": {
+    "corpus": "searched",
+    "inclusion": [
+      "Pupils aged 7 to 11",
+      "Comparison group or qualitative account of delivery",
+      "Reading outcome reported"
+    ],
+    "exclusion": [
+      "Opinion pieces",
+      "Coverage of a study already included"
+    ],
+    "search_log": [
+      {
+        "where": "Fixture Database A",
+        "query": "\"fixture reading programme\" AND comprehension",
+        "date": "2025-01-14",
+        "results": 31
+      },
+      {
+        "where": "Fixture Register B",
+        "query": "fixture reading programme trial",
+        "date": "2025-01-15",
+        "results": 4
+      }
+    ],
+    "flow": {
+      "identified": 35,
+      "after_dedup": 29,
+      "screened": 29,
+      "full_text_assessed": 8
+    },
+    "synthesis_method": "narrative synthesis with thematic synthesis of delivery evidence",
+    "assumptions": [
+      "Comprehension measured by any standardised test counts as the outcome"
+    ],
+    "deviations": []
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Fixture Trial One: a randomised trial in 58 schools",
+      "authors": "Fixture Author A; Fixture Author B",
+      "year": 2022,
+      "ref": "https://example.org/fixture-trial-one",
+      "type": "primary-study",
+      "design": "Cluster RCT",
+      "access": "full-text",
+      "status": "included",
+      "appraisal": {
+        "rating": "high",
+        "concerns": []
+      },
+      "context": "58 schools, 3,100 pupils aged 7 to 9, one school year, independent evaluator",
+      "lineage": "L1"
+    },
+    {
+      "id": "S2",
+      "title": "Fixture Trial Two: efficacy and twelve-month follow-up",
+      "authors": "Fixture Author C",
+      "year": 2023,
+      "ref": "https://example.org/fixture-trial-two",
+      "type": "primary-study",
+      "design": "RCT",
+      "access": "full-text",
+      "status": "included",
+      "appraisal": {
+        "rating": "moderate",
+        "concerns": [
+          "Led by the programme developer",
+          "24% attrition at follow-up"
+        ]
+      },
+      "context": "12 schools, 640 pupils aged 8 to 11, follow-up at 12 months",
+      "lineage": "L2"
+    },
+    {
+      "id": "S3",
+      "title": "Fixture Review of structured reading programmes",
+      "authors": "Fixture Author D; Fixture Author E",
+      "year": 2024,
+      "ref": "https://example.org/fixture-review",
+      "type": "systematic-review",
+      "design": "Systematic review, 14 trials",
+      "access": "full-text",
+      "status": "included",
+      "appraisal": {
+        "rating": "moderate",
+        "concerns": [
+          "Search limited to English",
+          "High heterogeneity not explored"
+        ]
+      },
+      "context": "14 trials of structured reading programmes; two concern this programme",
+      "lineage": "L3"
+    },
+    {
+      "id": "S4",
+      "title": "Fixture Delivery Study: teacher interviews",
+      "authors": "Fixture Author F",
+      "year": 2023,
+      "ref": "https://example.org/fixture-delivery",
+      "type": "primary-study",
+      "design": "Qualitative interviews",
+      "access": "full-text",
+      "status": "included",
+      "appraisal": {
+        "rating": "moderate",
+        "concerns": [
+          "Volunteer sample from schools still using the programme"
+        ]
+      },
+      "context": "16 teachers in 5 schools",
+      "lineage": "L4"
+    },
+    {
+      "id": "S5",
+      "title": "Fixture District Evaluation",
+      "authors": "Fixture District Office",
+      "year": 2021,
+      "ref": "https://example.org/fixture-district",
+      "type": "report",
+      "design": "Before-and-after comparison",
+      "access": "abstract-only",
+      "status": "included",
+      "appraisal": {
+        "rating": "low",
+        "concerns": [
+          "No comparison group",
+          "Only the summary was available"
+        ]
+      },
+      "context": "9 schools in one district",
+      "lineage": "L5"
+    },
+    {
+      "id": "S6",
+      "title": "Fixture News: reading programme boosts scores",
+      "year": 2022,
+      "ref": "https://example.org/fixture-news",
+      "type": "news",
+      "access": "full-text",
+      "status": "excluded",
+      "exclusion_reason": "Coverage of a study already included (S1)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The programme probably produces a small improvement in reading comprehension by the end of the first year.",
+      "type": "finding",
+      "theme": "Effect on comprehension",
+      "support": [
+        {
+          "source": "S1",
+          "locator": "Table 4, p. 31",
+          "kind": "data",
+          "text": "Effect size 0.12 (95% CI 0.02 to 0.22) on a standardised comprehension test at one year",
+          "checked": "confirmed"
+        },
+        {
+          "source": "S2",
+          "locator": "Table 2, p. 9",
+          "kind": "data",
+          "text": "Effect size 0.21 (95% CI 0.05 to 0.37) on a standardised comprehension test at post-test",
+          "checked": "confirmed"
+        },
+        {
+          "source": "S3",
+          "locator": "Section 4.2, p. 18",
+          "kind": "paraphrase",
+          "text": "The two trials of this programme both favoured it, with effects below the review average",
+          "checked": "confirmed"
+        }
+      ],
+      "contradicts": [
+        {
+          "source": "S5",
+          "locator": "Summary, p. 1",
+          "kind": "paraphrase",
+          "text": "District scores did not change in the two years after adoption",
+          "checked": "confirmed",
+          "reconciled": "Before-and-after design with no comparison group, read only as a summary; weaker than the two trials."
+        }
+      ],
+      "conditions": "Pupils aged 7 to 11; delivery supported by the developer",
+      "certainty": "moderate",
+      "rationale": "Two randomised trials agree in direction; lowered one level because the larger effect comes from a developer-led trial and the independent estimate is close to zero."
+    },
+    {
+      "id": "C2",
+      "statement": "The improvement may not last: the one trial with follow-up found no difference at twelve months.",
+      "type": "finding",
+      "theme": "Durability",
+      "support": [
+        {
+          "source": "S2",
+          "locator": "Table 3, p. 11",
+          "kind": "data",
+          "text": "Effect size 0.03 (95% CI -0.14 to 0.20) at twelve-month follow-up",
+          "checked": "confirmed"
+        },
+        {
+          "source": "S3",
+          "locator": "Section 5, p. 22",
+          "kind": "paraphrase",
+          "text": "Few trials of structured programmes report follow-up, and effects usually shrink where they do",
+          "checked": "confirmed"
+        }
+      ],
+      "certainty": "low",
+      "rationale": "One trial with high attrition at follow-up; the interval is wide enough to include a small lasting benefit."
+    },
+    {
+      "id": "C3",
+      "statement": "Teachers found the daily sessions hard to fit into the timetable, and shortened them.",
+      "type": "finding",
+      "theme": "Delivery",
+      "support": [
+        {
+          "source": "S4",
+          "locator": "Section 3.1, pp. 6-8",
+          "kind": "paraphrase",
+          "text": "11 of 16 teachers described shortening or skipping sessions because of timetable pressure",
+          "checked": "confirmed"
+        },
+        {
+          "source": "S4",
+          "locator": "p. 7",
+          "kind": "quote",
+          "text": "We did three a week, never five.",
+          "checked": "confirmed"
+        }
+      ],
+      "certainty": "low",
+      "rationale": "A single qualitative study with a volunteer sample from schools that kept the programme."
+    },
+    {
+      "id": "C4",
+      "statement": "A one-year pilot is reasonable only if it measures comprehension again a year after the programme ends and records how many sessions are delivered.",
+      "type": "recommendation",
+      "theme": "Decision",
+      "based_on": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "certainty": "low",
+      "rationale": "Follows from a small probable benefit, doubtful durability and likely under-delivery; the step from evidence to pilot design is a judgement."
+    }
+  ]
+}

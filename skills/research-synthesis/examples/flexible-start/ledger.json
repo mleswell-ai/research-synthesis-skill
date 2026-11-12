@@ -1,0 +1,259 @@
+{
+  "question": "Would offering flexible start times across all 30 depots reduce voluntary staff turnover?",
+  "purpose": "Decide whether to roll out flexible start times to all 30 depots.",
+  "as_of": "2026-11-12",
+  "mode": "standard",
+  "protocol": {
+    "corpus": "supplied",
+    "inclusion": [
+      "Reports voluntary turnover, or intention to leave, for staff with and without flexible start times",
+      "Distribution, warehouse or comparable shift-based work"
+    ],
+    "exclusion": [
+      "Coverage of a source already included that adds no data"
+    ],
+    "search_log": [],
+    "synthesis_method": "Narrative synthesis with a structured summary of effects",
+    "assumptions": [
+      "'Turnover' means voluntary leavers as a share of staff in post",
+      "The five supplied documents are everything available; no search was run"
+    ],
+    "deviations": []
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Northfield Logistics: Flexible Start Pilot, Final Report",
+      "authors": "Northfield People Analytics team",
+      "year": 2023,
+      "ref": "evals/files/flexible-start/01-northfield-pilot-report.md",
+      "type": "primary-study",
+      "design": "Cluster-randomised pilot, 12 depots",
+      "access": "full-text",
+      "status": "included",
+      "lineage": "L1",
+      "appraisal": {
+        "rating": "moderate",
+        "concerns": [
+          "Only 12 clusters and the analysis did not adjust for clustering, so the interval is too narrow",
+          "Two of six flexible depots opened canteens during the pilot",
+          "Depot managers knew their allocation",
+          "Evaluated by the employer's own team"
+        ]
+      },
+      "context": "12 depots, 1,184 staff (602 flexible, 582 fixed), twelve months"
+    },
+    {
+      "id": "S2",
+      "title": "Flexible starts slash staff turnover by a quarter",
+      "authors": "Warehouse Weekly",
+      "year": 2023,
+      "ref": "evals/files/flexible-start/02-trade-press-article.md",
+      "type": "news",
+      "access": "full-text",
+      "status": "excluded",
+      "exclusion_reason": "Coverage of S1 that adds no data; its 'quarter' is S1's 4-point difference restated as a relative change"
+    },
+    {
+      "id": "S3",
+      "title": "Shift flexibility and intention to leave: a cross-sectional survey",
+      "authors": "Journal of Applied Workforce Studies",
+      "year": 2021,
+      "ref": "evals/files/flexible-start/03-sector-survey-abstract.md",
+      "type": "primary-study",
+      "design": "Cross-sectional survey",
+      "access": "abstract-only",
+      "status": "included",
+      "lineage": "L2",
+      "appraisal": {
+        "rating": "low",
+        "concerns": [
+          "Only the abstract was available",
+          "22% response rate",
+          "Measures intention to leave, not leaving",
+          "Cross-sectional: cannot show that flexibility causes the difference"
+        ]
+      },
+      "context": "2,310 warehouse and distribution staff, 41 employers"
+    },
+    {
+      "id": "S4",
+      "title": "Customer story: how ShiftWise cut turnover by 40% at Calder Freight",
+      "authors": "ShiftWise Ltd",
+      "year": "n.d.",
+      "ref": "evals/files/flexible-start/04-vendor-case-study.md",
+      "type": "grey-literature",
+      "design": "Before-and-after account, one employer",
+      "access": "full-text",
+      "status": "included",
+      "lineage": "L3",
+      "appraisal": {
+        "rating": "very-low",
+        "concerns": [
+          "Published by the vendor of the rostering product to generate sales",
+          "No comparison group and no method stated",
+          "Pay rose 9% and the night shift closed in the same year",
+          "Undated"
+        ]
+      },
+      "context": "One employer, three sites"
+    },
+    {
+      "id": "S5",
+      "title": "Flexible start times in distribution: an 18-month matched evaluation",
+      "authors": "Institute for Work Research",
+      "year": 2024,
+      "ref": "evals/files/flexible-start/05-independent-evaluation.md",
+      "type": "primary-study",
+      "design": "Matched comparison, 9 flexible and 9 matched depots",
+      "access": "full-text",
+      "status": "included",
+      "lineage": "L4",
+      "appraisal": {
+        "rating": "moderate",
+        "concerns": [
+          "Depots were not randomly assigned; matched on region, size, pay band and prior turnover",
+          "Comparison depots belong to other employers"
+        ]
+      },
+      "context": "18 depots, 2,046 staff, 18 months, payroll outcomes, independently funded"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Flexible start times may reduce voluntary turnover by a few percentage points in the first six to twelve months.",
+      "type": "finding",
+      "theme": "Short-term effect",
+      "support": [
+        {
+          "source": "S1",
+          "locator": "Section 2, Table 2",
+          "kind": "data",
+          "text": "Twelve-month voluntary turnover 13.0% (78 of 602) with flexible starts against 17.0% (99 of 582) with fixed starts; difference 4.0 percentage points (95% CI 0.0 to 8.1), p = 0.05",
+          "checked": "confirmed"
+        },
+        {
+          "source": "S5",
+          "locator": "Table 5, months 1 to 6 (pages 12 to 15)",
+          "kind": "data",
+          "text": "Turnover 6.1% in flexible depots against 8.4% in matched depots; difference -2.3 points (95% CI -4.6 to 0.0)",
+          "checked": "confirmed"
+        },
+        {
+          "source": "S4",
+          "locator": "Paragraph 1",
+          "kind": "data",
+          "text": "Voluntary turnover fell from 25% to 15% in a year at one employer, in the same year as a 9% pay rise and the closure of the night shift",
+          "checked": "confirmed"
+        }
+      ],
+      "certainty": "low",
+      "rationale": "Two independent studies agree in direction, but both intervals reach zero, the randomised pilot did not adjust for clustering and had a co-intervention, and the other study was not randomised.",
+      "conditions": "Depot and warehouse staff; effect measured within the first year"
+    },
+    {
+      "id": "C2",
+      "statement": "The reduction may not last: the only evidence beyond twelve months found no difference in turnover from month 7 to month 18.",
+      "type": "finding",
+      "theme": "Durability",
+      "support": [
+        {
+          "source": "S5",
+          "locator": "Table 5, months 7 to 18 (pages 12 to 15)",
+          "kind": "data",
+          "text": "Turnover 14.9% in flexible depots against 14.2% in matched depots; difference +0.7 points (95% CI -2.4 to 3.8)",
+          "checked": "confirmed"
+        }
+      ],
+      "contradicts": [
+        {
+          "source": "S1",
+          "locator": "Section 2, Table 2",
+          "kind": "data",
+          "text": "A 4.0-point lower turnover over the full twelve months",
+          "reconciled": "S1 reports cumulative turnover for months 1 to 12 and does not separate early from late months, so it is compatible with an early reduction that fades.",
+          "checked": "confirmed"
+        }
+      ],
+      "certainty": "low",
+      "rationale": "A single non-randomised study; its interval is compatible with a small lasting benefit or a small harm."
+    },
+    {
+      "id": "C3",
+      "statement": "It is unclear whether any benefit is concentrated among staff in their first year.",
+      "type": "finding",
+      "theme": "Who benefits",
+      "support": [
+        {
+          "source": "S1",
+          "locator": "Table 3 (page 9)",
+          "kind": "data",
+          "text": "Under one year's tenure: 21.4% turnover with flexible starts against 31.9% with fixed; one year or more: 9.8% against 10.6%. The tenure analysis was not planned in advance.",
+          "checked": "confirmed"
+        }
+      ],
+      "contradicts": [
+        {
+          "source": "S5",
+          "locator": "Findings, page 17",
+          "kind": "paraphrase",
+          "text": "Managers at five of the nine flexible depots said popular start slots filled quickly and newer staff were usually left with the least popular ones",
+          "reconciled": "unexplained: S1 finds the largest difference among new staff while S5 reports that new staff got the least choice; neither study tests this."
+        }
+      ],
+      "certainty": "very-low",
+      "rationale": "One unplanned subgroup analysis in one pilot, in tension with managers' accounts in the other study."
+    },
+    {
+      "id": "C4",
+      "statement": "Staff with some control over their start time are less likely to say they intend to leave, which shows an association with intention and not an effect on leaving.",
+      "type": "finding",
+      "theme": "Association",
+      "support": [
+        {
+          "source": "S3",
+          "locator": "Abstract",
+          "kind": "data",
+          "text": "Odds ratio 0.71 (95% CI 0.58 to 0.87) for intending to leave within a year, adjusted for age, tenure and pay band; 2,310 staff, 22% response rate",
+          "checked": "confirmed"
+        }
+      ],
+      "certainty": "low",
+      "rationale": "One cross-sectional survey read only as an abstract, with a low response rate."
+    },
+    {
+      "id": "C5",
+      "statement": "If the early reduction fades, one possible reason is that popular start slots fill up and newer staff are left with little real choice.",
+      "type": "interpretation",
+      "theme": "Durability",
+      "based_on": [
+        "C2",
+        "C3"
+      ],
+      "support": [
+        {
+          "source": "S5",
+          "locator": "Findings, page 17",
+          "kind": "paraphrase",
+          "text": "Managers at five of the nine flexible depots said popular start slots filled quickly and newer staff were usually left with the least popular ones",
+          "checked": "confirmed"
+        }
+      ],
+      "certainty": "very-low",
+      "rationale": "A mechanism suggested by managers' accounts in one study; not tested."
+    },
+    {
+      "id": "C6",
+      "statement": "Do not roll out to all 30 depots on this evidence. Extend flexible starts to a randomly chosen subset of depots and track payroll turnover for at least 18 months before deciding.",
+      "type": "recommendation",
+      "theme": "Decision",
+      "based_on": [
+        "C1",
+        "C2"
+      ],
+      "certainty": "low",
+      "rationale": "A possible short-term benefit of uncertain durability does not justify a full roll-out, but is enough to justify a test that would settle it."
+    }
+  ]
+}
