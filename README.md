@@ -157,39 +157,49 @@ python -m unittest discover -s tests -v
 All evaluation and example material is fictitious. Reports of where the skill falls
 short are welcome as issues.
 
-## How this relates to other research skills
+## What makes this skill distinctive
 
-Several published skills cover neighbouring ground, and this one was written after
-studying them. None of their text or code is used. What was learned from each:
+Most research skills tell the model how to write a good review. This one makes the
+review's reliability something that can be computed and checked.
 
-| Skill or source | Idea taken forward |
-| --- | --- |
-| [Anthropic: skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) | A lean core file with references one level deep; check-fix-repeat loops; evaluations |
-| [Anthropic: multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) | Explicit briefs for workers; effort scaled to the task; broad-then-narrow search |
-| [rampstackco: discovery-research-synthesis](https://github.com/rampstackco/claude-skills/blob/main/skills/discovery-research-synthesis/SKILL.md) | Stages that may not be skipped; "do not act" as a legitimate implication; saying when data are too thin |
-| [daymade: deep-research](https://github.com/daymade/claude-code-skills/blob/main/deep-research/SKILL.md) | Binding claims to source ids and locators; weighing by underlying source, not by number of reports |
-| [199-biotechnologies: deep-research](https://github.com/199-biotechnologies/claude-deep-research-skill) | Keeping research state on disk; scripted validation |
-| [borghei: litreview](https://github.com/borghei/Claude-Skills/blob/main/research/litreview/SKILL.md) | Asking only the questions that change the work; fixing criteria before screening |
-| [mohitagw15856: user-research-synthesis](https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/user-research-synthesis/SKILL.md) | Counts with denominators; keeping observation apart from inference |
-| [K-Dense-AI: literature-review](https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/literature-review/SKILL.md) | Linking multiple reports of one study; a DOI that resolves is not a correct citation |
+- **Certainty is capped by structure, not only by judgement.** The tool works out the
+  highest rating a claim's evidence can carry and names the limiting factor. A claim
+  resting on one independent line of evidence cannot be rated above moderate, and
+  abstracts and second-hand reports cannot support more than low.
+- **Lineages are part of the data model.** Press coverage, preprints and re-analyses of
+  one study share a lineage and count once, and that count feeds the ceiling directly.
+- **Keystone analysis.** The tool lists the sources each rating depends on, so the
+  re-checking effort goes where a mistake would matter most.
+- **Contradictions must be answered.** Each piece of contrary evidence carries an
+  explanation or the word "unexplained", and an unanswered contradiction lowers the
+  ceiling.
+- **Typed claims.** Findings, interpretations and recommendations are separate, and a
+  derived claim can never be more certain than the weakest finding beneath it.
+- **A re-reading worksheet that gates the report.** Figures, quotations and keystone
+  evidence are re-read at source and marked confirmed or mismatch before a report can
+  pass outside rapid mode.
+- **One tool, 44 coded rules, each able to explain itself** (`ledger.py explain C01`),
+  tested by 54 tests, with a worked example that the tests check against its source
+  documents.
+- **Working methods for both evidence and people's words.** The same discipline covers
+  literature reviews, interview and feedback synthesis, and audits of other people's
+  reviews.
 
-What is different here, as far as that comparison shows: certainty ceilings computed from
-the evidence structure; lineages as a first-class field that the ceiling depends on;
-keystone analysis; reconciliation of contradictions as a field that affects the ceiling;
-typed claims with a rule that derived claims cannot outrank their basis; an enforced
-re-reading worksheet; and a single tool with coded, self-explaining rules.
+### Foundations
 
-A text comparison against those six repositories at release (every six-word sequence in
-this skill folder, checked against theirs) found 29 shared sequences out of about 23,500,
-or 0.12%. All were Python idioms, standard methodology terms such as GRADE's five
-domains, or stock phrases.
+The methodology is established and is not claimed as new: PRISMA 2020 and PRISMA-ScR for
+reporting; GRADE and GRADE-CERQual for certainty; the Cochrane Handbook on synthesis
+without meta-analysis; thematic, framework, realist and meta-ethnographic synthesis;
+AMSTAR 2, RoB 2, ROBINS-I, CASP, MMAT and AACODS for appraisal. The skill simplifies
+these for general use and says where it does. For a formal systematic review, apply the
+originals in full.
 
-The methodology itself is not original and is not claimed to be: PRISMA 2020 and
-PRISMA-ScR for reporting; GRADE and GRADE-CERQual for certainty; the Cochrane Handbook on
-synthesis without meta-analysis; thematic, framework, realist and meta-ethnographic
-synthesis; AMSTAR 2, RoB 2, ROBINS-I, CASP, MMAT and AACODS for appraisal. The skill
-simplifies these for general use and says where it does. For a formal systematic review,
-apply the originals in full.
+The structure follows general best practice for agent skills: a lean core file with
+references one level deep, check-fix-repeat loops, explicit briefs for delegated work,
+effort scaled to the question, and evaluations with planted traps. See Anthropic's
+[skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+and its account of the
+[multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system).
 
 ## Limitations
 
